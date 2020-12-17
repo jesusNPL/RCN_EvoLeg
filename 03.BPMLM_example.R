@@ -69,6 +69,7 @@ covars <- names(equatorial[c(20:26, 37, 39)])
 traitsMODEL <- names(equatorial[c(12, 13, 14)])
 
 ### Run Bayesian Phylogenetic Multilevel Model 
+# This take a lot of time to run, please be patient!
 
 for(i in 1:length(traits)){
   print(traits[i])
