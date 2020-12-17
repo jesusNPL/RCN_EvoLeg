@@ -86,11 +86,11 @@ for(i in 1:length(traits)){
         DR*rad + DR*pH + DR*cly +  
         MRD*CHELSA_bio10_1 + MRD*CHELSA_bio10_12 + MRD*CHELSA_bio10_4 + MRD*CHELSA_bio10_15 + 
         MRD*rad + MRD*pH + MRD*cly + 
-        (1|Species) + (1|Species_model) +  
+        (1 | Phylogeny) + (1 | Species) +  
         (1 + CHELSA_bio10_1 + CHELSA_bio10_12 + CHELSA_bio10_4 + CHELSA_bio10_15 + 
-           rad + pH + cly + DR + MRD|Realm),
+           rad + pH + cly + DR + MRD | Realm),
       data = DATA,
-      cov_ranef = list(Species = A_EQUA),
+      cov_ranef = list(Phylogeny = A_EQUA),
       chains = 4, iter = 10000, warmup = 2000, cores = getOption("mc.cores", 32), silent = TRUE,
       control = list(max_treedepth = 12, adapt_delta = 0.9999)
     )
