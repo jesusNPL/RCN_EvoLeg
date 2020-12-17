@@ -40,7 +40,7 @@ traits %>%
 equatorial <- droplevels(subset(traits, Major_climate_KG_family == "A"))
 equaPhy <- drop.tip(phyloMatch, setdiff(phyloMatch$tip.label, equatorial$Species))
 
-##### Run analysis by functional trait GLOBAL #####
+##### Run analysis by functional trait and by ancestral range #####
 dir.create("Multilevel/ANCESTRAL_MODELS/Equatorial")
 
 ## Scale environmental covariates 
