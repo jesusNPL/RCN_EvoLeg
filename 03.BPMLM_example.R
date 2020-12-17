@@ -86,7 +86,7 @@ for(i in 1:length(traits)){
         DR*rad + DR*pH + DR*cly +  
         MRD*CHELSA_bio10_1 + MRD*CHELSA_bio10_12 + MRD*CHELSA_bio10_4 + MRD*CHELSA_bio10_15 + 
         MRD*rad + MRD*pH + MRD*cly + 
-        (1|Species) + (1|Species_model) + #(1|Realm) +  
+        (1|Species) + (1|Species_model) +  
         (1 + CHELSA_bio10_1 + CHELSA_bio10_12 + CHELSA_bio10_4 + CHELSA_bio10_15 + 
            rad + pH + cly + DR + MRD|Realm),
       data = DATA,
