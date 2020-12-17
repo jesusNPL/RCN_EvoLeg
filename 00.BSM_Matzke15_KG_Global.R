@@ -1,4 +1,4 @@
-
+# Example for running BMS under the DEC+J model
 #library(ape)
 #tree<-read.nexus("MCC_anole_run1&2.nex")
 #write.tree(tree, file="anole_all.newick")
