@@ -45,7 +45,7 @@ extractLEVELS_STAN <- function(fit, level, trait, ancestral) {
   
 }
 
-##### Wrapper that allow creating a final data.frame of the samples #####
+##### Wrapper that allow creating a final data.frame from the samples #####
 #pars = "^[sd,b]_*"
 #Traits <- c("SLA", "LNM", "LPM")
 #Ancestral <- c("Arid", "Equatorial", "Temperate", "Polar", "Tundra", "Other")
@@ -107,6 +107,6 @@ extract_PREDICTED_DATA_STAN <-  function(fit, probs, trait, ancestral) {
   
   predDATA <- cbind(predVal, DATA)
   
-  return(fitDATA)
+  return(predDATA)
   
 }
