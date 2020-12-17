@@ -107,6 +107,6 @@ extract_PREDICTED_DATA_STAN <-  function(fit, probs, trait, ancestral) {
   
   predDATA <- cbind(predVal, DATA)
   
-  return(fitDATA)
+  return(predDATA)
   
 }
