@@ -3,8 +3,10 @@
 # level = which level, numeric
 # trait = trait name
 # ancestral = ancestral range
-extractLEVELS_STAN <- function(fit, level, trait, ancestral) {
-  efts <- ranef(fit) 
+# probs = The percentiles to be computed by the quantile function, default c(0.025, 0.975)
+
+extractLEVELS_STAN <- function(fit, level, trait, ancestral, probs) {
+  efts <- ranef(fit, robust = TRUE, probs = probs) 
   efts_lvl <- efts[[level]]
   Intercepts <- data.frame(efts_lvl[ , , "Intercept"])
   Intercepts$Variable <- "Intercept"
@@ -61,8 +63,10 @@ extractSAMPLES_Stan <- function(fit, pars, ancestral, trait) {
 # fit = model fitted
 # trait = trait name
 # ancestral = ancestral range
-extractFIXED_STAN <- function(fit, trait, ancestral) {
-  efts <- data.frame(fixef(fit)) 
+# probs = The percentiles to be computed by the quantile function, default c(0.025, 0.975)
+
+extractFIXED_STAN <- function(fit, trait, ancestral, probs) {
+  efts <- data.frame(fixef(fit, robust = TRUE, probs = probs)) 
   efts$Covars <- rownames(efts)
   efts$Trait <- trait
   efts$Ancestral <- ancestral
