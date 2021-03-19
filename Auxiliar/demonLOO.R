@@ -6,7 +6,10 @@
 #N = 2
 
 # Wrapper to run Bayesian model selection using LOO - Efficient approximate leave-one-out cross-validation
-extractLOO <- function(fits, direct, nModels) {
+extractLOO <- function(fits, direct, nModels) { 
+ 
+   if ( ! ("loo" %in% installed.packages())) {install.packages("loo", dependencies = T)} 
+  
   require(loo)
   loos <- list()
   
