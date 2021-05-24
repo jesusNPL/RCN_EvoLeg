@@ -77,7 +77,7 @@ extractFIXED_STAN <- function(fit, trait, ancestral, probs) {
 ##### Wrapper to extract fitted values #####
 
 extractFITTED_STAN <- function(fit, probs, trait, ancestral) {
-  fitVal <- data.frame(fitted(equa_lpm_fit, summary = TRUE, 
+  fitVal <- data.frame(fitted(fit, summary = TRUE, 
                               robust = TRUE, probs = probs))
   fitVal$Trait <- trait
   fitVal$Ancestral <- ancestral
