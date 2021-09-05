@@ -10,6 +10,11 @@ library(cmdstanr)
 
 set_cmdstan_path(path = NULL)
 
+options(mc.cores = parallel::detectCores())
+
+rstan_options(auto_write = TRUE)
+
+## Aux
 halfScale <- function(x){
   val <- (x-mean(x)) * 0.5/sd(x)
   return(val)
